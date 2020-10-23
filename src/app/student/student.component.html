@@ -1,0 +1,38 @@
+<p>student works!</p>
+
+<button mat-raised-button (click)="getALLStudent()" color="primary">Click get data</button>
+<button mat-raised-button (click)="deleteStudent()" color="primary">delete data sid</button>
+
+<mat-card class="example-card">
+    <mat-card-content>
+      <form class="example-form">
+        <table cellspacing="0" >
+          <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="firstname"  [(ngModel)]="firstname" name="firstname" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="lastname" [(ngModel)]="lastname"  name="lastname" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="ssid" [(ngModel)]="ssid" name="ssid" required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="insertData()" color="primary">insert</button>
+    </mat-card-actions>
+  </mat-card>
+  
