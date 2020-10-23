@@ -1,4 +1,5 @@
 <header>
+  <div class="w3-top">
   <mat-toolbar color="primary">
     <a routerLink="/" class="logo"></a>
     <span class="example-spacer"></span>
@@ -8,9 +9,13 @@
         <mat-icon>account_circle</mat-icon>{{ user.fullname }}
       </a>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngIf="user?.isAdmin" routerLink="/admin">admin</button>
+        <button mat-menu-item *ngIf="user?.isAdmin" routerLink="/admin/admin">admin</button>
         <button mat-menu-item (click)="logout()">logout</button>
       </mat-menu>
     </div>
   </mat-toolbar>
+</div>
 </header>
+
+
+

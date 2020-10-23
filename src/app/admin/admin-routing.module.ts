@@ -1,3 +1,4 @@
+import { ManagedramaComponent } from './../managedrama/managedrama.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,7 +11,12 @@ const routes: Routes = [{
   children: [{
     path: '',
     component: AdminComponent,
-  }]
+  },
+  {
+    path:'adddrama',
+    component: ManagedramaComponent,
+}
+]
 }];
 
 @NgModule({

@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './shared/services';
 import { HeroComponent } from './hero/hero.component';
 import { StudentComponent } from './student/student.component';
+import { LandingComponent } from './landing/landing.component';
+import { ManagedramaComponent } from './managedrama/managedrama.component';
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -21,7 +23,7 @@ export function appInitializerFactory(authService: AuthService) {
 
 @NgModule({
   imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent, HeroComponent, StudentComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, HeroComponent, StudentComponent, LandingComponent, ManagedramaComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

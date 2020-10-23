@@ -1,3 +1,4 @@
+import { LandingComponent } from './landing/landing.component';
 import { AdminComponent } from './admin/admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,12 +11,17 @@ import { StudentComponent } from './student/student.component';
 const routes: Routes = [
   {
     path: '',
+    component: LandingComponent,
+  },
+  {
+    path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
   },
   {
     path: 'hero',
     component: HeroComponent,
+    // canActivate: [AuthGuard],
   },
   {
     path: 'stu',

@@ -10,6 +10,10 @@ export class AdminComponent implements OnInit {
 
   public ngOnInit() {
   }
+  goAddDrama(){
+    console.log("click add drama");
+    
+  }
 }
 
 

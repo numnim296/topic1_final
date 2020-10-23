@@ -11,6 +11,7 @@ export class StudentComponent implements OnInit {
    firstname!: string;
    lastname!: string;
    ssid!: string;
+   countNumber: number=0;
   constructor(private router: Router, private studentService: StudentService) { }
 
   ngOnInit(): void {
@@ -30,5 +31,9 @@ export class StudentComponent implements OnInit {
     this.studentService.deleteStudent(this.ssid).subscribe(res=>{
       console.log('delete complete ',res)
     })
+  }
+
+  countNum(){
+    this.countNumber+=1
   }
 }
