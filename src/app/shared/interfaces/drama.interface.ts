@@ -5,5 +5,6 @@ export interface Drama {
     daytime: string;
     channel: string;
     review:string;
+    favorite:number
   }
 
