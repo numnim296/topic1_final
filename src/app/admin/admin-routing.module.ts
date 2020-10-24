@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { OnlyAdminUsersGuard } from './admin-user-guard';
+import { UpdatedramaComponent } from '@app/updatedrama/updatedrama.component';
 
 const routes: Routes = [{
   path: 'admin',
@@ -15,7 +16,11 @@ const routes: Routes = [{
   {
     path:'adddrama',
     component: ManagedramaComponent,
-}
+  },
+  {
+    path:'editdrama',
+    component: UpdatedramaComponent,
+  }
 ]
 }];
 

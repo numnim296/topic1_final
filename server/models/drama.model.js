@@ -8,6 +8,9 @@ const DramaSchema = new mongoose.Schema(
     channel: { type: String, required: true },
     review: { type: String, required: true },
     favorite:{type:Number,  default:0}
+    // favorite: [{
+    //   type: String,
+    // }]
   },
   {
     versionKey: false,

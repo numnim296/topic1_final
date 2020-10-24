@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const Drama = require('../models/drama.model');
+var ObjectId = require('mongodb').ObjectID;
 
 const dramaSchema = Joi.object({
     name: Joi.string().required(),
@@ -13,9 +14,12 @@ const dramaSchema = Joi.object({
 module.exports = {
   insert,
 //   get,
-//   getAll,
+  getAll,
 //   search,
-//   deleteData
+  deleteData,
+  testDelete,
+  updateDrama
+  
 }
 
 async function insert(drama) {
@@ -30,9 +34,9 @@ async function insert(drama) {
 //   return await Student.find({sid: sid});
 // }
 
-// async function getAll() {
-//   return await Student.find();
-// }
+async function getAll() {
+  return await Drama.find();
+}
 
 // async function search(key, value) {
 //   let query = {};
@@ -40,6 +44,15 @@ async function insert(drama) {
 //   return await Student.find(query);
 // }
 
-// async function deleteData(sid) {
-//   return await Student.deleteOne({sid: sid});
-// }
+async function deleteData(sid) {
+  return await Drama.deleteOne({_id: ObjectId(sid)});
+}
+
+async function testDelete(sid){
+  return await Drama.deleteOne({_id: ObjectId(sid)});
+}
+
+async function updateDrama(data){
+  return await Drama.updateOne({_id : ObjectId(data.id)},{$set:data.set})
+}
+

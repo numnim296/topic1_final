@@ -39,13 +39,13 @@ body {font-size:16px;}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
   
-  
-  <!-- Photo grid (modal) -->
-  
+
+
+
   
   <!-- Contact -->
   <div class="w3-container" id="contact" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>เพิ่มการรีวิวละคร</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>แก้ไขข้อมูลละคร</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
     <p>เพื่อความน่าสนใจของการรีวิว กรุณาเขียนให้เห็นภาพและผู้อ่านมีอารมณ์ร่วมกับการรีวิว</p>
     <form action="/action_page.php" target="_blank">
@@ -69,7 +69,7 @@ body {font-size:16px;}
         <label>รีวิว</label>
         <textarea class="w3-input w3-border" [(ngModel)]="review"  rows="8" name="review" required></textarea>
       </div>
-      <button (click)="addDrama()" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">เพิ่ม</button>
+      <button (click)="edit()"  class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">แก้ไข</button>
     </form>  
   </div>
 

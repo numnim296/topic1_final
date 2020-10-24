@@ -9,9 +9,12 @@ module.exports = router;
 
 router.route('/').post(asyncHandler(insert));
 // router.route('/get/:sid').get(asyncHandler(get));
-// router.route('/all').get(asyncHandler(getAll));
+router.route('/all').get(asyncHandler(getAll));
 // router.route('/search').get(asyncHandler(search));
-// router.route('/delete').post(asyncHandler(deleteData));
+router.route('/delete').post(asyncHandler(deleteData));
+
+router.route('/edit').post(asyncHandler(updateData));
+
 
 
 async function insert(req, res) {
@@ -24,18 +27,20 @@ async function insert(req, res) {
 //   res.json(all_students);
 // }
 
-// async function getAll(req, res) {
-//   let all_students = await studentCtrl.getAll();
-//   res.json(all_students);
-// }
+async function getAll(req, res) {
+  let drama = await dramaCtrl.getAll();
+  res.json(drama);
+}
 
-// async function search(req, res) {
-//   let result = await studentCtrl.search(req.params['key'], req.params['value']);
-//   res.json(result);
-// }
 
-// async function deleteData(req, res) {
-//   console.log('param => ',req.body.sid)
-//   let result = await studentCtrl.deleteData(req.body.sid);
-//   res.json(result);
-// }
+async function deleteData(req, res) {
+  console.log('param => ',req.body.sid)
+  let result = await dramaCtrl.testDelete(req.body.sid)
+  res.json(result);
+}
+
+async function updateData(req, res) {
+  console.log('param => ',req.body)
+  let result = await dramaCtrl.updateDrama(req.body)
+  res.json(result);
+}

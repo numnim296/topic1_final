@@ -15,9 +15,12 @@ export class ManagedramaComponent implements OnInit {
    channel!: string;
    review!: string;
 
-  constructor(private router: Router,private dramaService: DramaService) { }
+  constructor(private router: Router,private dramaService: DramaService) { 
+  
+  }
 
   ngOnInit(): void {
+    
   }
 
   addDrama(){
@@ -25,4 +28,5 @@ export class ManagedramaComponent implements OnInit {
       console.log('insert complete ',res)
     })
   }
+
 }

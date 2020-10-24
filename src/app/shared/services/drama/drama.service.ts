@@ -19,4 +19,33 @@ export class DramaService {
       map(res=>res)
     )
   }
+  getAllDrama(){
+    return this.http.get("/api/drama/all").pipe(
+      map(res => res)
+    )
+  }
+  deleteDrama(id:string){
+    const data = {sid:id}
+    return this.http.post("/api/drama/delete",data).pipe(
+      map(res=>res)
+    )
+  }
+
+  editDrama(id:string,name:string,imageurl:string,daytime:string,channel:string,review:string){
+    console.log('ind => ',id)
+    const data = {
+      id:id,
+      set:{
+      name:name,
+      imageurl:imageurl,
+      daytime:daytime,
+      channel:channel,
+      review:review
+    }
+  }
+    return this.http.post("/api/drama/edit",data).pipe(
+      map(res=>res)
+    )
+  }
 }
+

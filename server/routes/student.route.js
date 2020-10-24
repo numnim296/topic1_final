@@ -35,7 +35,6 @@ async function search(req, res) {
 }
 
 async function deleteData(req, res) {
-  console.log('param => ',req.body.sid)
   let result = await studentCtrl.deleteData(req.body.sid);
   res.json(result);
 }
