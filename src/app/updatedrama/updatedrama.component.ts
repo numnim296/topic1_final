@@ -29,7 +29,8 @@ export class UpdatedramaComponent implements OnInit {
   }
   edit(){
    this.dramaService.editDrama(this.id,this.name,this.imageurl,this.daytime,this.channel,this.review).subscribe(res=>{
-    console.log('edit complete ',res)
+    
+    this.router.navigateByUrl('/admin/admin')
   })
   }
 

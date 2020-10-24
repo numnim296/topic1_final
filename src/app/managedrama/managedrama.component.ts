@@ -25,7 +25,8 @@ export class ManagedramaComponent implements OnInit {
 
   addDrama(){
     this.dramaService.insertDrama(this.name,this.imageurl,this.daytime,this.channel,this.review).subscribe(res=>{
-      console.log('insert complete ',res)
+      // console.log('insert complete ',res)
+      this.router.navigateByUrl('/admin/admin')
     })
   }
 
